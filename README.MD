@@ -1,0 +1,1 @@
+# Dieses Script dient zum Backup eines LAMP-Servers.
