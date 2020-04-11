@@ -61,11 +61,13 @@ chmod -R 600 $BACKUP_DIR
 find $BACKUP_DIR -type d -print0 | xargs -0 chmod 700
 echo "Dateirechte wurden gesetzt"
 
-#service apache2 start
-#echo "Apache Webserver gestartet."
-sudo -u www-data php -f /var/www/nextcloud/occ maintenance:mode --off
-echo "Der Wartungsmodus wurde deaktiviert."
+service apache2 start
+echo "Apache Webserver gestartet."
+#sudo -u www-data php -f /var/www/nextcloud/occ maintenance:mode --off
+#echo "Der Wartungsmodus wurde deaktiviert."
 #################################################################################################################
 # Falls das Backupverzeichnis noch an einen weiteren Ort synchronisiert werden soll, kann dies hier mit rsync geschehen.
 # echo "rsync wird ausgeführt."
 # rsync -za $BACKUP_DIR /foo/bar/Backups 
+echo "Das Backupscript ist durchgelaufen."
+exit 0
